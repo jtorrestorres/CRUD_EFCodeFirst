@@ -8,7 +8,7 @@ namespace DL.Models
 {
     public class Materia
     {
-        [Key]
+        [Key] 
         public int IdMateria { get; set; }
         [Column(TypeName = "varchar(100)")]
         public string Nombre { get; set; }

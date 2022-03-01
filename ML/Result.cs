@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ML
 {
-    public class Result
+    public class Result 
     {
         public bool Correct { get; set; }
         public string ErrorMessage { get; set; }
