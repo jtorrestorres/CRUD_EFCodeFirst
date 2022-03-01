@@ -26,7 +26,7 @@ namespace BL
                 }
 
                 string sql = "EXEC MateriaGetAll";
-                var list = context.Materias.FromSqlRaw<DL.Models.Materia>(sql).ToList();
+                //var list = context.Materias.FromSqlRaw<DL.Models.Materia>(sql).ToList();
 
 
 
