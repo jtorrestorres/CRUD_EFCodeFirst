@@ -15,17 +15,20 @@ namespace BL
             {
                 var materias = context.Materias.ToList();
 
-                foreach(var obj in materias)
+                result.Objects = new List<object>();
+                foreach (var obj in materias)
                 {
+
                     ML.Materia materia = new ML.Materia();
                     materia.IdMateria = obj.IdMateria;
                     materia.Nombre = obj.Nombre;
                     materia.Descripcion = obj.Descripcion;
                     materia.Creditos = obj.Creditos;
-
+                    result.Objects.Add(materia);
                 }
 
-                string sql = "EXEC MateriaGetAll";
+                result.Correct = true;
+                // string sql = "EXEC MateriaGetAll";
                 //var list = context.Materias.FromSqlRaw<DL.Models.Materia>(sql).ToList();
 
 
@@ -41,24 +44,22 @@ namespace BL
 
             using (DL.Models.Context context = new DL.Models.Context())
             {
-                var materiaDb = context.Materias.Where(c=>c.IdMateria==IdMateria).FirstOrDefault();
+                var materiaDb = context.Materias.Where(c => c.IdMateria == IdMateria).FirstOrDefault();
 
                 ML.Materia materia = new ML.Materia();
                 materia.IdMateria = materiaDb.IdMateria;
                 materia.Nombre = materiaDb.Nombre;
                 materia.Descripcion = materiaDb.Descripcion;
 
-
-                List<DL.Models.Materia> list;
-                string sql = "EXEC MateriaGetById @IdMateria";
-
-                List<SqlParameter> parms = new List<SqlParameter>
-                {
-                    new SqlParameter { ParameterName = "@IdMateria", Value = IdMateria }
-                };
-
-
-                list = context.Materias.FromSqlRaw<DL.Models.Materia>(sql, parms.ToArray()).ToList();
+                result.Correct = true;
+                result.Object = materia;
+                //List<DL.Models.Materia> list;
+                //string sql = "EXEC MateriaGetById @IdMateria";
+                //List<SqlParameter> parms = new List<SqlParameter>
+                //{
+                //    new SqlParameter { ParameterName = "@IdMateria", Value = IdMateria }
+                //};
+                //list = context.Materias.FromSqlRaw<DL.Models.Materia>(sql, parms.ToArray()).ToList();
             }
 
             return result;
@@ -73,13 +74,13 @@ namespace BL
                 context.Materias.Add(
                     new DL.Models.Materia
                     {
-                        Nombre=materia.Nombre,
-                        Creditos=materia.Creditos,
-                        Descripcion=materia.Descripcion
+                        Nombre = materia.Nombre,
+                        Creditos = materia.Creditos,
+                        Descripcion = materia.Descripcion
                     });
                 context.SaveChanges();
 
-              
+
             }
 
             return result;
