@@ -12,30 +12,59 @@ namespace SL.Controllers
     [ApiController]
     public class MateriaController : ControllerBase
     {
+        //[HttpGet] //Obtener GetAll, GetById
+        //[HttpPost] //Add
+        //[HttpPut] //Update
+        //[HttpDelete] //Delete
+
         // GET: api/<MateriaController>
         [HttpGet]
-        public ML.Result Get()
+        public IActionResult Get()
         {
             ML.Result result = BL.Materia.GetAll();
-            return result;
+
+            if(result.Correct)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
 
         // GET api/<MateriaController>/5
         //[Route("api/Materia/{IdMateria}")]
+
         [HttpGet("{IdMateria}")]
-        public ML.Result Get(int IdMateria)
+        public IActionResult Get(int IdMateria)
         {
             ML.Result result = BL.Materia.GetById(IdMateria);
-            return result;
+            
+            if(result.Correct)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         // POST api/<MateriaController>
         [HttpPost]
-        public ML.Result Post([FromBody] ML.Materia materia)
+        public IActionResult Add([FromBody] ML.Materia materia)
         {
             ML.Result result = BL.Materia.Add(materia);
-            return result;
+            if (result.Correct)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         // PUT api/<MateriaController>/5

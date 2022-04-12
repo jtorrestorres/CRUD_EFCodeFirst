@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ML", "ML\ML.csproj", "{094A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PL", "PL\PL.csproj", "{B5A1CA86-6326-4B1C-8274-F13E9CFEFEC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL", "SL\SL.csproj", "{673B4D2E-D0CA-4BCD-9283-AE6E236AFA31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SL", "SL\SL.csproj", "{673B4D2E-D0CA-4BCD-9283-AE6E236AFA31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_WebAPI_2", "SL_WebAPI_2\SL_WebAPI_2.csproj", "{D27599C5-E52F-4D3E-9B9C-698763301159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{673B4D2E-D0CA-4BCD-9283-AE6E236AFA31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{673B4D2E-D0CA-4BCD-9283-AE6E236AFA31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{673B4D2E-D0CA-4BCD-9283-AE6E236AFA31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D27599C5-E52F-4D3E-9B9C-698763301159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27599C5-E52F-4D3E-9B9C-698763301159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27599C5-E52F-4D3E-9B9C-698763301159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27599C5-E52F-4D3E-9B9C-698763301159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
